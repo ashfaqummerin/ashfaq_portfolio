@@ -1,4 +1,13 @@
+"use client";
+
 import "./globals.css";
+import { ThemeProvider } from "next-themes";
+import { Saira } from "@next/font/google";
+
+const saira = Saira({
+  subsets: ["latin"],
+  variable: "--font-saira",
+});
 
 export const metadata = {
   title: "Portfolio",
@@ -9,7 +18,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
-        <main>{children}</main>
+        <ThemeProvider attribute="class">
+          <main className={`${saira.variable}`}>{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -3,7 +3,6 @@
 import React from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
-import Image from "next/image";
 import Link from "next/link";
 
 type Props = {};
@@ -14,41 +13,44 @@ export default function Hero({}: Props) {
     loop: true,
     delaySpeed: 2000,
   });
+
   return (
-    <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
+    <div className="heroContainer space-y-8">
       <BackgroundCircles />
-      <Image
-        src={"/profile icon.png"}
-        alt="profile_pic"
-        width={100}
-        height={100}
-        className="relative rounded-full h-32 w-32 mx-auto object-cover"
-      />
+
+      <h2 className="uppercase text-4xl text-gray-300 tracking-[15px] pb-2 font-bold font-saira">
+        Ashfaq Ummer
+      </h2>
+
       <div className="z-20">
-        <h2 className="text-sm uppercase text-gray-300 tracking-[15px] pb-2 font-bold">
-          full stack web developer
+        <h2 className="text-sm uppercase  tracking-[15px] pb-2 font-semibold emboss font-saira">
+          FULL STACK WEB DEVELOPER
         </h2>
         <h1 className="font-semibold px-40">
-          <span className="text-gray-600 mr-3">{text}</span>
+          <span className="text-gray-600 mr-3 tracking-[8px] font-saira">{text}</span>
           <Cursor cursorColor="green" />
         </h1>
 
         <div className="pt-5">
-          <Link href="#about">
-            <button className="heroButton">About</button>
-          </Link>
+          <a href="#about">
+            <button className="heroButton font-saira">About</button>
+          </a>
 
-          <Link href="#skills">
-            <button className="heroButton">Skills</button>
-          </Link>
+          <a href="#projects">
+            <button className="heroButton">Project</button>
+          </a>
 
-          <Link href="#projects">
-            <button className="heroButton">Projects</button>
-          </Link>
+          <a href="#contact">
+            <button className="heroButton">Contact</button>
+          </a>
 
-          <Link href="#experience">
-            <button className="heroButton">Experience</button>
-          </Link>
+          {/* <Link href="/projects">
+            <button className="heroButton">Project</button>
+          </Link> */}
+
+          {/* <Link href="/contact">
+            <button className="heroButton">Contact</button>
+          </Link> */}
         </div>
       </div>
     </div>

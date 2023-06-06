@@ -4,7 +4,108 @@
 
 @layer components {
   .heroButton {
-    @apply px-6 py-2 border border-[#242424] rounded-full text-xs uppercase tracking-widest text-gray-500  
-    transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40;
+    @apply px-6 py-2 border border-[#242424] rounded-full text-xs uppercase tracking-widest text-gray-50/75  
+    transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40 hover:scale-110 ease-in-out duration-200;
   }
+}
+
+.homePage {
+  background-color: rgb(36, 36, 36);
+  color: white;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow: auto;
+  z-index: 0;
+}
+
+.heroContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.emboss {
+  text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.3), 1px 1px 0px rgba(0, 0, 0, 0.8);
+  color: #c2c2c2;
+  opacity: 0.4;
+}
+
+.sectionHeading {
+  position: absolute;
+  top: 6rem;
+  text-transform: uppercase;
+  letter-spacing: 20px;
+  color: rgb(107, 114, 128);
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-family: var(--font-saira);
+}
+
+.aboutContainer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (min-width: 768px) {
+  .aboutContainer {
+    text-align: left;
+    flex-direction: row;
+  }
+}
+
+.projectContainer {
+  display: flex;
+  flex-direction: col;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+  text-align: left;
+  max-width: 100%;
+  margin: 0 auto;
+  z-index: 0;
+}
+
+@media (min-width: 768px) {
+  .projectContainer {
+    flex-direction: row;
+  }
+}
+
+.contactContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  text-align: center;
+  justify-content: space-evenly;
+  max-width: 80rem;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.hoverText:hover {
+  scale: 1.1;
+  transition-duration: 30ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projectCardContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 50px);
 }
